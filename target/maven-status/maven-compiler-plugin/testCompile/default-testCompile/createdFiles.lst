@@ -1,0 +1,15 @@
+com\snapon\sbs\dns\mailer\MailerHandlerTest.class
+com\snapon\sbs\dns\emailsettings\EmailJobTest.class
+com\snapon\sbs\dns\emailsettings\EmailMessageTypeTest.class
+com\snapon\sbs\dns\emailsettings\EmailLogTest.class
+com\snapon\sbs\dns\emailsettings\EmailPriorityTest.class
+com\snapon\sbs\dns\emailsettings\EmailTemplateTest.class
+com\snapon\sbs\dns\email\EmailRequestTest.class
+com\snapon\sbs\dns\emailsettings\EmailUserTest.class
+com\snapon\sbs\dns\mailer\MailerServiceTest.class
+com\snapon\sbs\dns\webservice\MailerTest.class
+com\snapon\sbs\dns\emailsettings\EmailBlacklistTest.class
+com\snapon\sbs\dns\emailsettings\EmailRecipientTest.class
+com\snapon\sbs\dns\emailsettings\EmailTemplateFormatTest.class
+com\snapon\sbs\dns\emailsettings\EmailPropertyTest.class
+com\snapon\sbs\dns\emailsettings\EmailTagTest.class

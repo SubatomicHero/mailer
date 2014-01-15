@@ -1,0 +1,53 @@
+<FindBugsFilter>
+   <Match>
+      <Package name="~org.*"/>
+   </Match>
+ 
+<!-- We sometimes build schema or tables names into SQL, so we can't always use constant strings -->
+ 
+   <Match>
+      <Bug pattern="SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING" />
+   </Match>
+   <Match>
+      <Bug pattern="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" />
+   </Match>
+
+<!-- We don't actually serialize, so we'll hide the messages about non-serializable members in
+a serializable class. -->
+   <Match>
+      <Bug pattern="SE_BAD_FIELD,SE_BAD_FIELD_STORE,SE_TRANSIENT_FIELD_NOT_RESTORED" />
+   </Match>
+
+<!-- General Ignoring issues after specific review -->
+ 
+	<Match>
+		<Class name="com.snapon.sbs.dns.mailer.MailerHandler$1" />
+    	<Bug pattern=" SIC_INNER_SHOULD_BE_STATIC_ANON" /> 
+    </Match>
+
+<!-- Tests generally initialize in a setup method. And catching Exception can simplify things in tests -->
+
+    <Match>
+		<Or>
+		<Class name="~.*Test" />
+		<Class name="~[\w\.]*Test.*" />
+		<Class name="~[\w\.]*Try.*" />
+		</Or>
+      <Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR,REC_CATCH_EXCEPTION,NM_CONFUSING,RV_RETURN_VALUE_IGNORED_INFERRED" /> 
+    </Match>
+
+<!-- Tests may call constructors to check we get an exception with invalid arguments. So if the method ends with exception (and optional number)...-->
+    <Match>
+    	<And>
+		<Or>
+		<Class name="~.*Test" />
+		<Class name="~[\w\.]*Test.*" />
+		<Class name="~[\w\.]*Try.*" />
+		</Or>
+		<Method name="~test.*Exception\d*"/>
+ 		</And>
+      <Bug pattern="DLS_DEAD_LOCAL_STORE" /> 
+    </Match>
+
+
+</FindBugsFilter>

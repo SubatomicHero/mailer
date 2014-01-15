@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+ <script language="JavaScript" type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+ <script src="js/mailer.js"></script>
+  <title>Mailer Module Web Portal</title>
+  <style type="text/css">
+  	fieldset
+  	{
+  		float: left;
+  		width = 50%;
+  	}
+  </style>
+</head>
+<body>
+<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;"></span>
+ <fieldset>
+ <legend>Email Details</legend>
+	Recipients:
+	  <input id="emailRecipient" type="text"><br>
+	Subject:
+	  <input id="subjectText" type="text"><br>
+	Body Text:
+	  <input id="bodyText" type="text"><br>
+	Schema:
+	  <input id="systemName" type="text"><br>
+	Email Type:
+	  <input id="emailType" type="text"><br>
+	Email Format:<br>
+	  <input name="emailFormat" type="radio" value="plain">Plain Text<br>
+	  <input name="emailFormat" type="radio" value="html">HTML Text<br>
+	  <input name="emailFormat" type="radio" value="rich">Rich Text<br><br>
+	  <input name="urgency" type="radio" value="HIGH">High<br>
+	  <input name="urgency" type="radio" value="MEDIUM">Medium<br>
+	  <input name="urgency" type="radio" value="LOW">Low<br><br>
+	  <input name="template" type="text" value="2" disabled><br>
+	<input name="button" type="button" Value="Submit" onClick="SendData()"><br>
+	<b>  Response:</b><div id="replyMessage">Not yet sent.</div>
+ </fieldset>
+ <fieldset>
+ 	<legend>User Details</legend>
+ 	Salutation:
+ 	 <select id="salutations">
+ 	 	<option value="Mr">Mr.</option>
+ 	 	<option value="Mrs">Mrs.</option>
+ 	 	<option value="Ms">Ms.</option>
+ 	 	<option value="None">None.</option>
+ 	 </select><br><br><br>
+ 	 First Name:
+ 	 <input id="firstName" type="text"><br>
+ 	 Surname:
+ 	 <input id="surName" type="text"><br>
+ 	 Address Line 1:
+ 	 <input id="address1" type="text"><br>
+ 	 Address Line 2:
+ 	 <input id="address2" type="text"><br>
+ 	 Address Line 3:
+ 	 <input id="address3" type="text"><br>
+ 	 Country code:
+ 	 <input id="countryCode" type="text" value="74" disabled><br>
+ 	 Language code:
+ 	 <input id="languageCode" type="text" value="25" disabled><br>
+ 	 Postcode:
+ 	 <input id="postCode" type="text"><br>
+ 	 Contact Number:
+ 	 <input id="telNo" type="text"><br>
+ </fieldset>
+</body>
+</html>

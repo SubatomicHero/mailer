@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.snapon.sbs.dns.email.EmailRequestTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 sec - in com.snapon.sbs.dns.email.EmailRequestTest

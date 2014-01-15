@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	<display-name>NXD</display-name>
+	<description>NXD application</description>
+	<distributable />	
+	<servlet>
+		<servlet-name>AutostartServlet</servlet-name>
+		<servlet-class>com.snapon.sbs.dns.mailer.AutostartServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>TrackingServlet</servlet-name>
+		<servlet-class>com.snapon.sbs.dns.mailer.TrackingServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>EmailImageServlet</servlet-name>
+		<servlet-class>com.snapon.sbs.dns.mailer.EmailImageServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>TrackingServlet</servlet-name>
+		<url-pattern>/tracking/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EmailImageServlet</servlet-name>
+		<url-pattern>/emailImage/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MailerWebService</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.snapon.sbs.dns.webservice</param-value>
+		</init-param>
+		<init-param>
+              <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+              <param-value>true</param-value>
+       </init-param>
+       <load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>MailerWebService</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+</web-app>
